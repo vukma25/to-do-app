@@ -1,8 +1,19 @@
-body {
+:root {
+  --color-1: hsl(0, 0%, 10%);
+  --color-2: hsl(0, 5%, 95%);
+}
+
+* {
+  font-family: Be Vietnam Pro, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-2);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +21,97 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.input-controller {
+  width: 600px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px auto;
+  gap: 5px;
+}
+
+.input-controller textarea {
+  width: 78%;
+  min-width: 77%;
+  max-width: 80%;
+  font-size: 1.1rem;
+  padding: 5px;
+}
+
+.input-controller button {
+  width: 20%;
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: var(--color-1);
+  color: var(--color-2);
+  padding: 1.7rem 0;
+}
+.input-controller button:active {
+  opacity: 0.8;
+}
+
+.cols {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 850px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.rows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.task {
+  width: 65%;
+  min-width: 60%;
+  padding: 5px;
+  height: auto;
+}
+
+.input-controller textarea:focus, .task:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+.btn-group {
+  display: flex;
+  gap: .5rem;
+}
+
+.paging {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media screen and (max-width: 450px) {
+  .input-controller, .cols {
+    width: 98vw;
+  }
+
+  .task {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 452px) and (max-width: 900px) {
+  .input-controller {
+    width: 555px;
+  }
+  .cols {
+    width: 650px;
+  }
 }
